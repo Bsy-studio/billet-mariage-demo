@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +22,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 25px;
+            padding: 30px 20px;
             box-sizing: border-box;
         }
 
@@ -30,7 +31,7 @@
             max-width: 500px;
             height: 600px;
             object-fit: cover;
-            border-radius: 140px 140px 20px 20px;
+            border-radius: 250px 250px 25px 25px;
             border: 6px solid white;
             box-shadow: 0 5px 20px rgba(0,0,0,0.15);
         }
@@ -58,8 +59,69 @@
             color: white;
             padding: 15px 30px;
             border-radius: 30px;
+            border: none;
             text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .fenetre {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            z-index: 10;
+        }
+
+        .formulaire {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+
+        .formulaire h2 {
+            color: #006b5b;
+            margin-top: 0;
+        }
+
+        .formulaire input,
+        .formulaire select,
+        .formulaire textarea {
+            width: 100%;
+            padding: 13px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 10px;
             font-family: Arial, sans-serif;
+        }
+
+        .formulaire textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        .fermer {
+            float: right;
+            font-size: 28px;
+            cursor: pointer;
+            color: #555;
+        }
+
+        .envoyer {
+            background: #b65f3c;
+            color: white;
+            border: none;
+            padding: 13px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -68,7 +130,9 @@
 
     <div class="accueil">
 
-        <img src="mariage.jpeg" alt="Brunelle et Steve" class="photo">
+        <img src="mariage.jpeg"
+             alt="Brunelle et Steve"
+             class="photo">
 
         <div class="bienvenue">
             Bienvenue à notre mariage
@@ -80,11 +144,58 @@
             22 août 2026
         </div>
 
-        <a href="#" class="bouton">
+        <button class="bouton" onclick="ouvrirRSVP()">
             Confirmer ma présence
-        </a>
+        </button>
 
     </div>
 
+
+    <div id="rsvp" class="fenetre">
+
+        <div class="formulaire">
+
+            <span class="fermer" onclick="fermerRSVP()">×</span>
+
+            <h2>Confirmer ma présence</h2>
+
+            <input
+                type="text"
+                placeholder="Nom et prénom">
+
+            <select>
+                <option>Je serai présent(e)</option>
+                <option>Je ne pourrai pas venir</option>
+            </select>
+
+            <input
+                type="text"
+                placeholder="Nom de mon accompagnateur">
+
+            <textarea
+                placeholder="Un petit message pour les mariés"></textarea>
+
+            <button class="envoyer">
+                Envoyer ma réponse
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function ouvrirRSVP() {
+            document.getElementById("rsvp").style.display = "flex";
+        }
+
+        function fermerRSVP() {
+            document.getElementById("rsvp").style.display = "none";
+        }
+
+    </script>
+
 </body>
+
 </html>
