@@ -5,25 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Brunelle & Steve</title>
+    <title>Brunelle & Steve | Notre mariage</title>
 
     <style>
-        body {
-            margin: 0;
-            font-family: Georgia, serif;
-            background: #f8f3ed;
-            color: #333;
-            text-align: center;
+        * {
+            box-sizing: border-box;
         }
 
-        .accueil {
+        body {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            background: #f8f3ed;
+            color: #333;
+        }
+
+        /* PAGE D'ACCUEIL */
+
+        .hero {
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
+            text-align: center;
             padding: 30px 20px;
-            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 650px;
+        }
+
+        .petit-texte {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #006b5b;
+            margin-bottom: 25px;
         }
 
         .photo {
@@ -32,169 +50,161 @@
             height: 600px;
             object-fit: cover;
             border-radius: 250px 250px 25px 25px;
-            border: 6px solid white;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            border: 7px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
 
-        .bienvenue {
-            margin-top: 30px;
-            font-size: 20px;
+        .noms {
+            font-size: 48px;
             color: #006b5b;
+            margin: 25px 0 10px;
+            line-height: 1.2;
         }
 
-        h1 {
-            font-size: 44px;
-            margin: 10px 0;
-            color: #006b5b;
+        .et {
+            color: #b65f3c;
         }
 
         .date {
-            font-size: 21px;
+            font-size: 22px;
             color: #b65f3c;
-            margin: 15px 0 30px;
+            margin-bottom: 30px;
         }
 
         .bouton {
+            display: inline-block;
             background: #006b5b;
             color: white;
             padding: 15px 30px;
-            border-radius: 30px;
-            border: none;
+            border-radius: 40px;
             text-decoration: none;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .fenetre {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.55);
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            z-index: 10;
-        }
-
-        .formulaire {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            width: 100%;
-            max-width: 400px;
-            box-sizing: border-box;
-        }
-
-        .formulaire h2 {
-            color: #006b5b;
-            margin-top: 0;
-        }
-
-        .formulaire input,
-        .formulaire select,
-        .formulaire textarea {
-            width: 100%;
-            padding: 13px;
-            margin: 8px 0;
-            box-sizing: border-box;
-            border: 1px solid #ddd;
-            border-radius: 10px;
             font-family: Arial, sans-serif;
+            font-size: 16px;
+            transition: 0.3s;
         }
 
-        .formulaire textarea {
-            height: 100px;
-            resize: none;
+        .bouton:hover {
+            transform: translateY(-3px);
         }
 
-        .fermer {
-            float: right;
-            font-size: 28px;
-            cursor: pointer;
-            color: #555;
+        /* PETITE FLECHE */
+
+        .fleche {
+            display: block;
+            margin-top: 25px;
+            color: #006b5b;
+            font-size: 25px;
         }
 
-        .envoyer {
-            background: #b65f3c;
-            color: white;
-            border: none;
-            padding: 13px 25px;
-            border-radius: 25px;
-            cursor: pointer;
-            margin-top: 10px;
+        /* SECTION INFORMATIONS */
+
+        .section {
+            padding: 80px 25px;
+            text-align: center;
+            background: #fffaf5;
+        }
+
+        .section h2 {
+            color: #006b5b;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
+        }
+
+        .carte {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            .petit-texte {
+                font-size: 16px;
+            }
+
+            .photo {
+                height: 480px;
+            }
+
+            .noms {
+                font-size: 38px;
+            }
+
+            .date {
+                font-size: 19px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="accueil">
+    <!-- ACCUEIL -->
 
-        <img src="mariage.jpeg"
-             alt="Brunelle et Steve"
-             class="photo">
+    <section class="hero">
 
-        <div class="bienvenue">
-            Bienvenue à notre mariage
-        </div>
+        <div class="hero-content">
 
-        <h1>Brunelle & Steve</h1>
+            <div class="petit-texte">
+                Nous avons le plaisir de vous inviter
+                à célébrer notre amour
+            </div>
 
-        <div class="date">
-            22 août 2026
-        </div>
+            <img
+                src="mariage.jpeg"
+                alt="Brunelle et Steve"
+                class="photo"
+            >
 
-        <button class="bouton" onclick="ouvrirRSVP()">
-            Confirmer ma présence
-        </button>
+            <div class="noms">
+                Brunelle <span class="et">&</span> Steve
+            </div>
 
-    </div>
+            <div class="date">
+                22 août 2026
+            </div>
 
+            <a href="#invitation" class="bouton">
+                Découvrir notre invitation
+            </a>
 
-    <div id="rsvp" class="fenetre">
-
-        <div class="formulaire">
-
-            <span class="fermer" onclick="fermerRSVP()">×</span>
-
-            <h2>Confirmer ma présence</h2>
-
-            <input
-                type="text"
-                placeholder="Nom et prénom">
-
-            <select>
-                <option>Je serai présent(e)</option>
-                <option>Je ne pourrai pas venir</option>
-            </select>
-
-            <input
-                type="text"
-                placeholder="Nom de mon accompagnateur">
-
-            <textarea
-                placeholder="Un petit message pour les mariés"></textarea>
-
-            <button class="envoyer">
-                Envoyer ma réponse
-            </button>
+            <div class="fleche">
+                ↓
+            </div>
 
         </div>
 
-    </div>
+    </section>
 
 
-    <script>
+    <!-- PREMIERE SECTION -->
 
-        function ouvrirRSVP() {
-            document.getElementById("rsvp").style.display = "flex";
-        }
+    <section id="invitation" class="section">
 
-        function fermerRSVP() {
-            document.getElementById("rsvp").style.display = "none";
-        }
+        <div class="carte">
 
-    </script>
+            <h2>Bienvenue à notre mariage</h2>
+
+            <p>
+                Nous sommes heureux de partager
+                cette journée exceptionnelle avec
+                les personnes qui nous sont chères.
+            </p>
+
+            <p>
+                Votre présence rendra cette célébration
+                encore plus spéciale.
+            </p>
+
+        </div>
+
+    </section>
 
 </body>
 
