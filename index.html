@@ -3,40 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Brunelle & Steve</title>
 
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: Georgia, serif;
             background: #f8f3ed;
             color: #333;
             text-align: center;
         }
 
-        .billet {
+        .accueil {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 30px;
+            padding: 25px;
             box-sizing: border-box;
         }
 
-        h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
+        .photo {
+            width: 280px;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 140px 140px 20px 20px;
+            border: 6px solid white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
         }
 
-        h2 {
-            font-weight: normal;
-            margin-bottom: 30px;
+        .bienvenue {
+            margin-top: 30px;
+            font-size: 20px;
+            color: #006b5b;
+        }
+
+        h1 {
+            font-size: 44px;
+            margin: 10px 0;
+            color: #006b5b;
         }
 
         .date {
-            font-size: 22px;
-            margin-bottom: 30px;
+            font-size: 21px;
+            color: #b65f3c;
+            margin: 15px 0 30px;
         }
 
         .bouton {
@@ -45,16 +58,20 @@
             padding: 15px 30px;
             border-radius: 30px;
             text-decoration: none;
-            display: inline-block;
+            font-family: Arial, sans-serif;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="billet">
+    <div class="accueil">
 
-        <h2>Bienvenue à notre mariage</h2>
+        <img src="mariage.jpeg" alt="Brunelle et Steve" class="photo">
+
+        <div class="bienvenue">
+            Bienvenue à notre mariage
+        </div>
 
         <h1>Brunelle & Steve</h1>
 
